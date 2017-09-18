@@ -16,7 +16,7 @@ class Provider extends AbstractProvider implements ProviderInterface
     /**
      * {@inheritdoc}
      */
-    protected $scopes = [];
+    protected $scopes = [''];
 
     /**
      * {@inheritdoc}
@@ -55,10 +55,10 @@ class Provider extends AbstractProvider implements ProviderInterface
     {
         return (new User())->setRaw($user)->map([
             'id' => $user['id'],
-            //'mobile' => $user['mobile'],
+            'nickname' => $user['username'],
             'name' => $user['name'],
             'email' => $user['email'],
-            //'avatar' => $user['avatar_url'],
+            'avatar' => $user['avatar_url'],
         ]);
     }
 
